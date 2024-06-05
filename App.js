@@ -6,9 +6,11 @@ export default function App() {
   const App = () => {
     const height = 200;
     const width = 200;
+
   };
   return (
-    <View
+
+    <View // Main View
       style={{
         flex: 1,
         marginTop: 50,
@@ -58,7 +60,7 @@ export default function App() {
           style={{
             backgroundColor: "red",
             height: 180,
-            width: 180
+            width: 180,
           }}
         >
           <Text
@@ -116,7 +118,7 @@ export default function App() {
           style={{
             backgroundColor: "yellow",
             height: 180,
-            width: 180
+            width: 180,
           }}
         >
           <Text
