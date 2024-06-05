@@ -1,135 +1,45 @@
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, FlatList } from "react-native";
 import React from "react";
 import { FontAwesome, AntDesign } from "@expo/vector-icons";
+import { categoriesData } from "./__mockData/category.data";
 
 export default function App() {
-  const App = () => {
-    const height = 200;
-    const width = 200;
+  console.log(categoriesData);
 
-  };
   return (
-
-    <View // Main View
+    <View
       style={{
         flex: 1,
         marginTop: 50,
-        backgroundColor: "white",
-        gap: 10,
-        alignItems: "center"
+        backgroundColor: "black",
+        padding: 10
       }}
     >
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "12%"
+      <FlatList
+        data={categoriesData}
+        renderItem={(category) => {
+          return (
+            <View
+              style={{
+                backgroundColor: "white",
+                borderRadius: 25,
+                width: 155,
+                height: 167,
+                marginRight: 20,
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <Image source={category.item.image} />
+
+              <Text style={{ color: "black" }}>{category.item.title}</Text>
+            </View>
+          );
         }}
-      >
-        <View>
-          <AntDesign name="github" size={24} color="black" />
-        </View>
-
-        <View>
-          <FontAwesome name="facebook" size={24} color="black" />
-        </View>
-      </View>
-
-      <View>
-        <Image
-          source={require("./assets/mockimages/p_cat2.png")}
-          // source={{
-          // uri: "https://reactnative.dev/docs/assets/p_cat2.png"
-          // }}
-
-          style={{ width: 140, height: 140, resizeMode: "contain" }}
-        />
-      </View>
-
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          // alignItems: "center",
-          gap: 10
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: "red",
-            height: 180,
-            width: 180,
-          }}
-        >
-          <Text
-            style={{
-              color: "white"
-            }}
-          >
-            Hello Theo
-          </Text>
-        </View>
-
-        <View
-          style={{
-            backgroundColor: "yellow",
-            height: 180,
-            width: 180
-          }}
-        >
-          <Text
-            style={{
-              color: "black"
-            }}
-          >
-            Hello Omari
-          </Text>
-        </View>
-      </View>
-
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 10
-        }}
-      >
-        <View
-          style={{
-            backgroundColor: "red",
-            height: 180,
-            width: 180
-          }}
-        >
-          <Text
-            style={{
-              color: "white"
-            }}
-          >
-            Hello Theo
-          </Text>
-        </View>
-
-        <View
-          style={{
-            backgroundColor: "yellow",
-            height: 180,
-            width: 180,
-          }}
-        >
-          <Text
-            style={{
-              color: "black"
-            }}
-          >
-            Hello Omari
-          </Text>
-        </View>
-      </View>
+        keyExtractor={(category) => category.id}
+        numColumns={2}
+        contentContainerStyle={{ gap: 20, marginHorizontal: 20 }}
+      />
     </View>
   );
 }
