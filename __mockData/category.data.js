@@ -30,4 +30,14 @@ export const categoriesData = [
         title: 'Digital Service',
         image: require("../assets/mockimages/main_card.png")
     },
+    {
+        id: 6,
+        title: 'Digital Service',
+        image: require("../assets/mockimages/main_card.png")
+    },
+    {
+        id: 7,
+        title: 'Digital Service',
+        image: require("../assets/mockimages/main_card.png")
+    },
 ]
