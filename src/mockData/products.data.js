@@ -36,3 +36,48 @@ export const productData = [
     price: "GHS 190"
   }
 ];
+
+export const allProduct = [
+  {
+    id: 0,
+    name: "Adidas SuperCloud",
+    description:
+      "Step into comfort and style with Adidas footwear - performance redefined.",
+    price: "GHS 700"
+  },
+  {
+    id: 1,
+    name: "Adidas SuperCloud",
+    description:
+      "Step into comfort and style with Adidas footwear - performance redefined.",
+    price: "GHS 700"
+  },
+  {
+    id: 2,
+    name: "Adidas SuperCloud",
+    description:
+      "Step into comfort and style with Adidas footwear - performance redefined.",
+    price: "GHS 700"
+  },
+  {
+    id: 3,
+    name: "Adidas SuperCloud",
+    description:
+      "Step into comfort and style with Adidas footwear - performance redefined.",
+    price: "GHS 700"
+  },
+  {
+    id: 4,
+    name: "Adidas SuperCloud",
+    description:
+      "Step into comfort and style with Adidas footwear - performance redefined.",
+    price: "GHS 700"
+  },
+  {
+    id: 5,
+    name: "Adidas SuperCloud",
+    description:
+      "Step into comfort and style with Adidas footwear - performance redefined.",
+    price: "GHS 700"
+  }
+];

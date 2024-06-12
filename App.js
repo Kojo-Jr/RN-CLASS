@@ -5,7 +5,7 @@ import {
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
 import { AntDesign, Entypo, Feather } from "@expo/vector-icons";
-import { productData } from "./src/mockData/products.data";
+import { productData, allProduct } from "./src/mockData/products.data";
 
 const App = () => {
   return (
@@ -58,23 +58,26 @@ const App = () => {
       {/* Banner Section */}
       <View className="flex flex-row">
         <View
-          style={{
-            width: wp("90%"),
-            height: wp("35%"),
-            backgroundColor: "orange"
-          }}
-          className="rounded-3xl flex-1 items-end p-5"
+          // style={{
+          //   width: wp("90%"),
+          //   height: wp("35%"),
+          //   backgroundColor: "orange"
+          // }}
+          className="flex-1 items-end"
         >
-          {/* <Image
+          <Image
             source={require("./assets/mockimages/heels.jpeg")}
             style={{
-              width: wp(7),
-              height: wp(6)
+              width: wp("90%"),
+              height: wp("35%")
             }}
-          /> */}
+            className="rounded-3xl"
+          />
           <Text
             style={{
-              color: "white"
+              color: "white",
+              position: "absolute",
+              padding: wp(5)
             }}
           >
             <Text className="text-2xl">50%{"\n"}</Text>
@@ -91,7 +94,7 @@ const App = () => {
       {/* Featured Section*/}
       <View className="space-y-2 bottom-5">
         <Text
-          className="font-semibold tracking-widest"
+          className="font-medium tracking-widest"
           style={{ fontSize: wp(6) }}
         >
           Featured
@@ -139,6 +142,61 @@ const App = () => {
       </View>
 
       {/*All Product Section */}
+      <View>
+        <View className="flex-row justify-between">
+          <Text className="text-xl font-medium">All</Text>
+          <Text>See All</Text>
+        </View>
+        <FlatList
+          data={allProduct}
+          renderItem={({ item }) => {
+            return (
+              <View
+                style={{
+                  width: wp(92),
+                  height: wp(38)
+                }}
+                className="flex-row bg-white rounded-3xl "
+              >
+                <View>
+                  <Image
+                    style={{
+                      height: wp(35),
+                      width: wp(30)
+                    }}
+                    className="bg-orange-200 rounded-tl-3xl rounded-bl-3xl"
+                    source={require("./assets/mockimages/adidas_shoe.png")}
+                  />
+                </View>
+
+                <View // Name,description, price of all products
+                  className="flex-row flex-1 justify-between p-3"
+                >
+                  <View style={{ gap: wp(2), marginRight: wp(2) }}>
+                    <Text className="text-black font-semibold text-xl">
+                      Adidas SuperCloud
+                    </Text>
+                    <Text className="text-xs">
+                      Step into comfort and style{"\n"}with Adidas footwear-
+                      performance
+                      {"\n"}
+                      redefined.
+                    </Text>
+                    <Text className="font-semibold text-lg">GHS 700</Text>
+                  </View>
+                  <View>
+                    <Feather name="heart" size={24} color="black" />
+                  </View>
+                </View>
+              </View>
+            );
+          }}
+          keyExtractor={(item, id) => id}
+          scrollEventThrottle={3}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ gap: 25 }}
+        />
+      </View>
     </View>
   );
 };
