@@ -41,41 +41,47 @@ export const allProduct = [
   {
     id: 0,
     name: "Adidas SuperCloud",
+    image: require("../../assets/mockimages/adidassupercloud.png"),
     description:
       "Step into comfort and style with Adidas footwear - performance redefined.",
     price: "GHS 700"
   },
   {
     id: 1,
-    name: "Adidas SuperCloud",
+    name: "Nike Airmax 90",
+    image: require("../../assets/mockimages/nike_airmax_90.png"),
     description:
-      "Step into comfort and style with Adidas footwear - performance redefined.",
-    price: "GHS 700"
+      "Experience the ultimate in innovation and comfort with Nike footwear - just do it.",
+    price: "GHS 790"
   },
   {
     id: 2,
-    name: "Adidas SuperCloud",
+    name: "Birkenstock",
+    image: require("../../assets/mockimages/birkenstock.png"),
     description:
-      "Step into comfort and style with Adidas footwear - performance redefined.",
+      "Discover unmatched comfort and timeless style with Birkenstock footwear - where tradition meets innovation.",
     price: "GHS 700"
   },
   {
     id: 3,
-    name: "Adidas SuperCloud",
+    name: "Stylish Crocs",
+    image: require("../../assets/mockimages/furo slips.png"),
     description:
-      "Step into comfort and style with Adidas footwear - performance redefined.",
-    price: "GHS 700"
+      "Embrace fun and comfort with Crocs footwear - your go-to for versatile and playful style.",
+    price: "GHS 200"
   },
   {
     id: 4,
-    name: "Adidas SuperCloud",
+    name: "Curren Watch",
+    image: require("../../assets/mockimages/currenwatch.png"),
     description:
-      "Step into comfort and style with Adidas footwear - performance redefined.",
-    price: "GHS 700"
+      "Elevate your look with Curren watches - timeless elegance and precision craftsmanship.",
+    price: "GHS 1250"
   },
   {
     id: 5,
     name: "Adidas SuperCloud",
+    image: require("../../assets/mockimages/adidas_shoe.png"),
     description:
       "Step into comfort and style with Adidas footwear - performance redefined.",
     price: "GHS 700"

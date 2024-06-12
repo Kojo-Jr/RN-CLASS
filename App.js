@@ -142,7 +142,7 @@ const App = () => {
       </View>
 
       {/*All Product Section */}
-      <View>
+      <View className="space-y-2">
         <View className="flex-row justify-between">
           <Text className="text-xl font-medium">All</Text>
           <Text>See All</Text>
@@ -153,7 +153,7 @@ const App = () => {
             return (
               <View
                 style={{
-                  width: wp(92),
+                  width: wp(90),
                   height: wp(38)
                 }}
                 className="flex-row bg-white rounded-3xl "
@@ -161,28 +161,24 @@ const App = () => {
                 <View>
                   <Image
                     style={{
+                      resizeMode: "contain",
                       height: wp(35),
                       width: wp(30)
                     }}
                     className="bg-orange-200 rounded-tl-3xl rounded-bl-3xl"
-                    source={require("./assets/mockimages/adidas_shoe.png")}
+                    source={item.image}
                   />
                 </View>
 
                 <View // Name,description, price of all products
                   className="flex-row flex-1 justify-between p-3"
                 >
-                  <View style={{ gap: wp(2), marginRight: wp(2) }}>
+                  <View style={{ gap: wp(2) }}>
                     <Text className="text-black font-semibold text-xl">
-                      Adidas SuperCloud
+                      {item.name}
                     </Text>
-                    <Text className="text-xs">
-                      Step into comfort and style{"\n"}with Adidas footwear-
-                      performance
-                      {"\n"}
-                      redefined.
-                    </Text>
-                    <Text className="font-semibold text-lg">GHS 700</Text>
+                    <Text className="text-xs">{item.description}</Text>
+                    <Text className="font-semibold text-lg">{item.price}</Text>
                   </View>
                   <View>
                     <Feather name="heart" size={24} color="black" />
@@ -192,7 +188,7 @@ const App = () => {
             );
           }}
           keyExtractor={(item, id) => id}
-          scrollEventThrottle={3}
+          scrollEventThrottle={5}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ gap: 25 }}
         />
