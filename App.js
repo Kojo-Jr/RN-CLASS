@@ -1,10 +1,10 @@
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, Image } from "react-native";
 import React from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, Entypo, Feather } from "@expo/vector-icons";
 
 const App = () => {
   return (
@@ -45,16 +45,86 @@ const App = () => {
         >
           <Text
             style={{
-              fontSize: wp(3)
+              fontSize: wp(3),
+              color: "white"
             }}
           >
             3
           </Text>
         </View>
       </View>
+
       {/* Banner Section */}
+      <View className="flex flex-row">
+        <View
+          style={{
+            width: wp("90%"),
+            height: wp("35%"),
+            backgroundColor: "orange"
+          }}
+          className="rounded-3xl flex-1 items-end p-5"
+        >
+          {/* <Image
+            source={require("./assets/mockimages/heels.jpeg")}
+            style={{
+              width: wp(7),
+              height: wp(6)
+            }}
+          /> */}
+          <Text
+            style={{
+              color: "white"
+            }}
+          >
+            <Text className="text-2xl">50%{"\n"}</Text>
+
+            <Text style={{ fontSize: wp(9) }}>Discount{"\n"}</Text>
+            <Text>Aug 21- 26</Text>
+          </Text>
+        </View>
+      </View>
+      <View className="flex items-center bottom-6">
+        <Entypo name="dots-three-horizontal" size={24} color="orange" />
+      </View>
 
       {/* Featured Section*/}
+      <View className="space-y-4">
+        <Text
+          className="font-semibold tracking-widest"
+          style={{ fontSize: wp(6) }}
+        >
+          Featured
+        </Text>
+
+        <View
+          style={{
+            height: wp(59),
+            width: wp(55)
+          }}
+          className="border bg-white border-white rounded-2xl"
+        >
+          <View className="bg-blue-100 flex items-center justify-center rounded-t-2xl">
+            <Image
+              style={{
+                resizeMode: "contain",
+                width: wp(53),
+                height: wp(40)
+              }}
+              source={require("./assets/mockimages/p_cat2.png")}
+            />
+          </View>
+
+          <View style={{ padding: wp(2), gap: wp(2) }}>
+            <Text className="font-medium text-lg">Fuji X-Pro</Text>
+
+            <View className="flex flex-row items-center justify-between">
+              <Text>$333</Text>
+
+              <Feather name="heart" size={24} color="black" />
+            </View>
+          </View>
+        </View>
+      </View>
 
       {/*All Product Section */}
     </View>
