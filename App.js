@@ -1,10 +1,11 @@
-import { View, Text, TextInput, Image } from "react-native";
+import { View, Text, TextInput, Image, FlatList } from "react-native";
 import React from "react";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
 import { AntDesign, Entypo, Feather } from "@expo/vector-icons";
+import { productData } from "./src/mockData/products.data";
 
 const App = () => {
   return (
@@ -88,42 +89,53 @@ const App = () => {
       </View>
 
       {/* Featured Section*/}
-      <View className="space-y-4">
+      <View className="space-y-2 bottom-5">
         <Text
           className="font-semibold tracking-widest"
           style={{ fontSize: wp(6) }}
         >
           Featured
         </Text>
+        <FlatList
+          data={productData}
+          renderItem={({ item }) => {
+            return (
+              <View
+                style={{
+                  height: wp(59),
+                  width: wp(45)
+                }}
+                className="border bg-white border-white rounded-2xl"
+              >
+                <View className="bg-blue-100 flex items-center justify-center rounded-t-2xl">
+                  <Image
+                    style={{
+                      resizeMode: "contain",
+                      width: wp(53),
+                      height: wp(40)
+                    }}
+                    source={item.image}
+                  />
+                </View>
 
-        <View
-          style={{
-            height: wp(59),
-            width: wp(55)
+                <View style={{ padding: wp(2), gap: wp(2) }}>
+                  <Text className="font-medium text-lg">{item.name}</Text>
+
+                  <View className="flex flex-row items-center justify-between">
+                    <Text>{item.price}</Text>
+
+                    <Feather name="heart" size={24} color="black" />
+                  </View>
+                </View>
+              </View>
+            );
           }}
-          className="border bg-white border-white rounded-2xl"
-        >
-          <View className="bg-blue-100 flex items-center justify-center rounded-t-2xl">
-            <Image
-              style={{
-                resizeMode: "contain",
-                width: wp(53),
-                height: wp(40)
-              }}
-              source={require("./assets/mockimages/p_cat2.png")}
-            />
-          </View>
-
-          <View style={{ padding: wp(2), gap: wp(2) }}>
-            <Text className="font-medium text-lg">Fuji X-Pro</Text>
-
-            <View className="flex flex-row items-center justify-between">
-              <Text>$333</Text>
-
-              <Feather name="heart" size={24} color="black" />
-            </View>
-          </View>
-        </View>
+          keyExtractor={(item, id) => id}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          scrollEventThrottle={3}
+          contentContainerStyle={{ gap: 25 }}
+        />
       </View>
 
       {/*All Product Section */}
