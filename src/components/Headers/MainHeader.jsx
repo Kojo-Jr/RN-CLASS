@@ -1,11 +1,11 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 
 const MainHeader = ({ name, email }) => {
   return (
     <View className="flex flex-row items-center justify-between">
-      <View style={{ gap: 3 }}>
+      <View style={Style.profileText}>
         <Text className="font-bold text-2xl">{name}</Text>
         <Text className="text-gray-500">{email}</Text>
       </View>
@@ -13,12 +13,7 @@ const MainHeader = ({ name, email }) => {
       <View className="bg-black rounded-full">
         <Image
           source={require("../../../assets/mockimages/Electronic/meta.png")}
-          style={{
-            width: wp(10),
-            height: wp(10),
-            resizeMode: "cover",
-            borderRadius: wp(10)
-          }}
+          style={Style.profileImageHeader}
         />
       </View>
     </View>
@@ -26,3 +21,15 @@ const MainHeader = ({ name, email }) => {
 };
 
 export default MainHeader;
+
+const Style = StyleSheet.create({
+  profileText: {
+    gap: 3
+  },
+  profileImageHeader: {
+    width: wp(10),
+    height: wp(10),
+    resizeMode: "cover",
+    borderRadius: wp(10)
+  }
+});

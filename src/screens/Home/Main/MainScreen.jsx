@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { widthPercentageToDP as wp } from "react-native-responsive-screen";
 import MainHeader from "../../../components/Headers/MainHeader";
 import MiniHeader from "../../../components/Headers/MiniHeader";
@@ -7,6 +7,7 @@ import SearchBox from "../../../components/Textinputs/SearchBox";
 import { jobsData, popularJobs } from "../../../mockData/jobsData";
 import BigCards from "../../../components/Cards/BigCards";
 import SmallCards from "../../../components/Cards/SmallCards";
+import { styled } from "nativewind";
 
 //TODO: Screen must scrollable
 //TODO: Featured must be in flatList horizontal
@@ -14,7 +15,7 @@ import SmallCards from "../../../components/Cards/SmallCards";
 
 const MainScreen = () => {
   return (
-    <View style={{ flex: 1, padding: wp(3), gap: wp(10), marginTop: wp(15) }}>
+    <View style={Style.mainScreenContainer}>
       <FlashList
         ListHeaderComponent={() => {
           return (
@@ -83,3 +84,12 @@ const MainScreen = () => {
 };
 
 export default MainScreen;
+
+const Style = StyleSheet.create({
+  mainScreenContainer: {
+    flex: 1,
+    padding: wp(3),
+    gap: wp(10),
+    marginTop: wp(15)
+  }
+});
